@@ -15,9 +15,9 @@ export const CountrySearch = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     const region = searchParams.get('query');
     if (!region) return;
+    setLoading(true);
 
     fetchByRegion(region).then(setCountries).finally(setLoading(false));
   }, [searchParams]);
